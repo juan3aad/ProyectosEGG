@@ -23,7 +23,7 @@ public class For {
        Scanner leer = new Scanner(System.in);
        byte num1=0,num2=0,num3=0,num4=0;
        do{
-        System.out.println("Ingrese un numero entre 1 y 20");
+        System.out.println("Ingrese un numero JUAN entre 1 y 20");
          num1= leer.nextByte();
     }while((num1<1) && (num1>20));
        do{
