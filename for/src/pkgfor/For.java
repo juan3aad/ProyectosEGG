@@ -17,6 +17,7 @@ public class For {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        String cadena="";
         //Cambio de Elimes
         System.out.println("Hola este es mi cambio ER");
         
@@ -39,18 +40,22 @@ public class For {
          num4= leer.nextByte();
        }while((num4<1) && (num4>20));
        
+       System.out.print(num1);
        for(byte i=0;i < num1;i++){
         System.out.print("*");
     }
         System.out.println("");
+        System.out.print(num2);
         for(byte i=0;i < num2;i++){
         System.out.print("*");
     }
         System.out.println("");
+        System.out.print(num3);
         for(byte i=0;i < num3;i++){
         System.out.print("*");
     }
         System.out.println("");
+        System.out.print(num4);
         for(byte i=0;i < num4;i++){
         System.out.print("*");
     }
