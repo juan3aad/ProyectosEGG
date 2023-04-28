@@ -1,5 +1,3 @@
-package extras;
-
 
 import java.util.Scanner;
 
