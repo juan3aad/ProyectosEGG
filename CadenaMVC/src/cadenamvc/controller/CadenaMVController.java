@@ -50,52 +50,49 @@ public class CadenaMVController {
 
             }
         }
-        System.out.println("El numero de vocales es: "+ contVocal); 
+        System.out.println("El numero de vocales es: " + contVocal);
     }
-    
-    public void invertirFrase(CadenaMVC cadenaMVC){
-        String invertida="";
-        for (int i = cadenaMVC.getLogitud()-1; i >= 0; i--) {
-            invertida=invertida.concat(cadenaMVC.getFrase().charAt(i)+"");
-            
+
+    public void invertirFrase(CadenaMVC cadenaMVC) {
+        String invertida = "";
+        for (int i = cadenaMVC.getLogitud() - 1; i >= 0; i--) {
+            invertida = invertida.concat(cadenaMVC.getFrase().charAt(i) + "");
+
         }
-        
-       System.out.println("La frase ionvertida es: "+ invertida);
+
+        System.out.println("La frase invertida es: " + invertida);
     }
-    
-    public int vecesRepetido(char letra,CadenaMVC cadenaMVC){
-        int contaRepetir=0;
-        for (int i = 0; i <cadenaMVC.getLogitud() ; i++) {
-            if(cadenaMVC.getFrase().charAt(i)==letra)
-            {
+
+    public int vecesRepetido(char letra, CadenaMVC cadenaMVC) {
+        int contaRepetir = 0;
+        for (int i = 0; i < cadenaMVC.getLogitud(); i++) {
+            if (cadenaMVC.getFrase().charAt(i) == letra) {
                 contaRepetir++;
             }
-            
+
         }
-        
+
         return contaRepetir;
     }
-    
-    public void compararLongitud(String frase, CadenaMVC cadenaMVC){
-        if(frase.length()== cadenaMVC.getLogitud()){
+
+    public void compararLongitud(String frase, CadenaMVC cadenaMVC) {
+        if (frase.length() == cadenaMVC.getLogitud()) {
             System.out.println("La logitud es igual");
-        }
-        else
-        {
-            System.out.println("La logitud es diferente "+ frase.length() +" y " + cadenaMVC.getLogitud());
+        } else {
+            System.out.println("La logitud es diferente " + frase.length() + " y " + cadenaMVC.getLogitud());
         }
     }
-    public String unirFrases(String frase, CadenaMVC cadenaMVC)
-    {
+
+    public String unirFrases(String frase, CadenaMVC cadenaMVC) {
         return cadenaMVC.getFrase().concat(frase);
     }
-    
-    public String remplazar(String letra, CadenaMVC cadenaMVC){
+
+    public String remplazar(String letra, CadenaMVC cadenaMVC) {
         return cadenaMVC.getFrase().replace('a', letra.charAt(0));
     }
-    
-    public  boolean contiene(String letra, CadenaMVC cadenaMVC){
-         return cadenaMVC.getFrase().contains(letra);
+
+    public boolean contiene(String letra, CadenaMVC cadenaMVC) {
+        return cadenaMVC.getFrase().contains(letra);
     }
 
 }
