@@ -35,7 +35,10 @@ public class MascotaController {
         System.out.println("Introduccir tipo:");
         String tipo = leer.next();
 
-        return new Mascota(nombre, apodo, tipo);
+        System.out.println("Introduccir edad:");
+        Integer edad = leer.nextInt();
+
+        return new Mascota(nombre, apodo, tipo,edad);
 
     }
 
@@ -54,7 +57,7 @@ public class MascotaController {
 
     public void fabricaChiquitos(int cantidad) {
         for (int i = 0; i < cantidad; i++) {
-            mascotas.add(new Mascota("Fer", "Chiquito", "Beagle"));
+            mascotas.add(new Mascota("Fer", "Chiquito", "Beagle",20));
 
         }
 
@@ -113,6 +116,29 @@ public class MascotaController {
             System.out.println("El indice es erroneo para eliminar");
         }
         
+    }
+    
+    public void eliminarMascotaPorNombre(String nombre){
+        for (int i = 0; i < mascotas.size(); i++) {
+            Mascota m= mascotas.get(i);
+            if(m.getNombre().equals(nombre)){
+                mascotas.remove(m);
+            }
+            
+        }
+        
+    }
+    
+    
+    public void actualizarMascotaPorNombre(String nombreViejo, String nombreNuevo){
+        for (int i = 0; i < mascotas.size(); i++) {
+            Mascota m=mascotas.get(i);
+            if(m.getNombre().equals(nombreViejo))
+            {
+                m.setNombre(nombreNuevo);
+            }
+            
+        }
     }
     
 }

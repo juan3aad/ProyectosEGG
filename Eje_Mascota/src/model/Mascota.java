@@ -13,15 +13,19 @@ public class Mascota {
     private String nombre;
     private String apodo;
     private String tipo;
+    private Integer edad;
 
     public Mascota() {
     }
 
-    public Mascota(String nombre, String apodo, String tipo) {
+    public Mascota(String nombre, String apodo, String tipo, Integer edad) {
         this.nombre = nombre;
         this.apodo = apodo;
         this.tipo = tipo;
+        this.edad = edad;
     }
+
+
 
     @Override
     public String toString() {
@@ -50,6 +54,14 @@ public class Mascota {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public Integer getEdad() {
+        return edad;
+    }
+
+    public void setEdad(Integer edad) {
+        this.edad = edad;
     }
     
     
