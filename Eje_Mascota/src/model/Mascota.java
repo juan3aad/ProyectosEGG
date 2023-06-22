@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.util.Objects;
+
 /**
  *
  * @author ajuand
  */
-public class Mascota {
+public class Mascota  implements Comparable<Mascota>{
     private String nombre;
     private String apodo;
     private String tipo;
@@ -62,6 +64,48 @@ public class Mascota {
 
     public void setEdad(Integer edad) {
         this.edad = edad;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.nombre);
+        hash = 59 * hash + Objects.hashCode(this.apodo);
+        hash = 59 * hash + Objects.hashCode(this.tipo);
+        hash = 59 * hash + Objects.hashCode(this.edad);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Mascota other = (Mascota) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.apodo, other.apodo)) {
+            return false;
+        }
+        if (!Objects.equals(this.tipo, other.tipo)) {
+            return false;
+        }
+        if (!Objects.equals(this.edad, other.edad)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int compareTo(Mascota o) {
+        return this.getNombre().compareTo(o.getNombre());
     }
     
     
