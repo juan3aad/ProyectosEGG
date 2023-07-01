@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejemplo_1g10">
+  <ClassDiagramComponents>
+    <Class name="Principal" package="ejemplo_1g10" visibility="public" xPosition="286.0" yPosition="378.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Profesor" package="ejemplo_1g10" visibility="public" xPosition="74.0" yPosition="95.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Curso" package="ejemplo_1g10" visibility="public" xPosition="465.0" yPosition="44.0">
+      <Fields>
+        <Field name="anio" type="int" visibility="private"/>
+        <Field name="division" type="char" visibility="private"/>
+        <Field name="profesor" type="Profesor" visibility="private"/>
+        <Field name="alumnos" type="List&lt;Alumno&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="anio"/>
+          <Argument type="char" name="division"/>
+          <Argument type="Profesor" name="profesor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getProfesor" returnType="Profesor" visibility="public"/>
+        <Method name="setProfesor" returnType="void" visibility="public">
+          <Argument type="Profesor" name="p"/>
+        </Method>
+        <Method name="getAnio" returnType="int" visibility="public"/>
+        <Method name="setAnio" returnType="void" visibility="public">
+          <Argument type="int" name="anio"/>
+        </Method>
+        <Method name="getDivision" returnType="char" visibility="public"/>
+        <Method name="setDivision" returnType="void" visibility="public">
+          <Argument type="char" name="division"/>
+        </Method>
+        <Method name="getAlumnos" returnType="List&lt;Alumno&gt;" visibility="public"/>
+        <Method name="setAlumnos" returnType="void" visibility="public">
+          <Argument type="List&lt;Alumno&gt;" name="alumnos"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Alumno" package="ejemplo_1g10" visibility="public" xPosition="860.0" yPosition="44.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="alumnos" source="ejemplo_1g10.Curso" target="ejemplo_1g10.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Alumno&gt;"/>
+    <HasRelation name="profesor" source="ejemplo_1g10.Curso" target="ejemplo_1g10.Profesor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ejemplo_1g10.Curso" target="ejemplo_1g10.Profesor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ejemplo_1g10.Curso" target="ejemplo_1g10.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
